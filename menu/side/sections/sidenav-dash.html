@@ -1,0 +1,125 @@
+<script type="text/javascript">
+  var pid = "none";
+  function showhide(id) {
+    var elements = document.getElementById(id).childNodes;
+    var menu = elements[3];
+    var arrow = elements[1].childNodes[4].childNodes[1];
+    if (menu.style.display == "block") {
+      menu.style.display = "none";
+      arrow.style.transform = "rotate(0deg)";
+      elements[1].style.color = "#111111";
+    } else {
+      menu.style.display = "block";
+      arrow.style.transform = "rotate(270deg)";
+      elements[1].style.color = "#09f";
+    }
+    if (pid == id) pid = "none";
+    if (pid != "none") {
+      elements = document.getElementById(pid).childNodes;
+      menu = document.getElementById(pid).childNodes[3];
+      arrow = elements[1].childNodes[4].childNodes[1];
+      if (menu.style.display == "block") {
+        menu.style.display = "none";
+        arrow.style.transform = "rotate(0deg)";
+        elements[1].style.color = "#111111";
+      }
+    }
+    pid = id;
+  }
+
+  function showOptions() {
+    var flag = document.getElementById("options");
+    if (flag.style.display == "block") {
+      flag.style.display = "none";
+      document.getElementById("mark").style.display = "none";
+    } else {
+      flag.style.display = "block";
+      document.getElementById("mark").style.display = "block";
+    }
+  }
+</script>
+<div class="sidenav" style="opacity: 0.7;">
+  <div class="card">
+    <div class="card-body">
+      <div class="logo">
+        <img src="../../images/logo.jpg" class="profile" width="170" height="70" />
+        <h1 class="logo-caption">
+        </h1>
+      </div>
+      <!-- logo class -->
+      <!-- dashboard start -->
+      <div class="main-menu-item">
+        <a href="../../ui/index.php" class=" btn btn-secondary px-4 w-100 text-light">
+          <i class="fa fa-dashboard"></i><span>Dashboard</span>
+        </a>
+      </div>
+      <!-- dashboard end -->
+      
+      <!-- Application strat -->
+      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="../../ui/tables.php" class=" btn btn-info px-4 w-100">
+          <!-- <i class="fa fa-pills"></i> -->
+          <span>Tables</span>
+        </a>
+      </div>
+      <!-- Application end -->
+      
+      <!-- Forms strat -->
+      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="../../ui/forms.php" class=" btn btn-info px-4 w-100">
+          <!-- <i class="fa fa-pills"></i> -->
+          <span>Form Elements</span>
+        </a>
+      </div>
+      <!-- Forms end -->
+      
+      <!-- Application2 strat -->
+      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="#" class=" btn btn-info px-4 w-100">
+          <!-- <i class="fa fa-pills"></i> -->
+          <span>Application2</span>
+        </a>
+      </div>
+      <!-- Application2 end -->
+      
+      <!-- Application3 strat -->
+      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="#" class=" btn btn-info px-4 w-100">
+          <!-- <i class="fa fa-pills"></i> -->
+          <span>Application3</span>
+        </a>
+      </div>
+      <!-- Application3 end -->
+      
+      <!-- Application4 strat -->
+      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="#" class=" btn btn-info px-4 w-100">
+          <!-- <i class="fa fa-pills"></i> -->
+          <span>Application4</span>
+        </a>
+      </div>
+      <!-- Application4 end -->
+      
+      <!-- Application5 strat -->
+      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="#" class=" btn btn-info px-4 w-100">
+          <!-- <i class="fa fa-pills"></i> -->
+          <span>Application5</span>
+        </a>
+      </div>
+      <!-- Application5 end -->
+      
+      <!-- Database strat -->
+      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="../../ui/database.php" class=" btn btn-info px-4 w-100">
+          <!-- <i class="fa fa-pills"></i> -->
+          <span>Database</span>
+        </a>
+      </div>
+      <!-- Database end -->
+      
+    </div>
+    <!-- card-body class -->
+  </div>
+  <!-- card  -->
+</div>
