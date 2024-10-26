@@ -12,7 +12,7 @@
   <link href="../dist/css/icons/themify-icons/themify-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/sidenav.css">
   <link rel="stylesheet" href="../css/home.css">
-  <script src="js/validateForm.js"></script>
+  <script src="../js/validateForm.js"></script>
 
   <style>
     body {
