@@ -137,3 +137,25 @@ function addCustomer() {
   return false;
 }
 
+function addSupplier() {
+  document.getElementById("supplier_acknowledgement").innerHTML = "";
+  var supplier_name = document.getElementById("supplier_name");
+  var supplier_email = document.getElementById("supplier_email");
+  var contact_number = document.getElementById("supplier_contact_number");
+  var supplier_address = document.getElementById("supplier_address");
+  if(!validateName(supplier_name.value, "name_error"))
+    supplier_name.focus();
+  else if(!validateContactNumber(contact_number.value, "contact_number_error"))
+    contact_number.focus();
+  else if(!validateAddress(supplier_address.value, "address_error"))
+    supplier_address.focus();
+  else {
+    var xhttp = new XMLHttpRequest();
+  	xhttp.onreadystatechange = function() {
+  		if(xhttp.readyState = 4 && xhttp.status == 200)
+  			document.getElementById("supplier_acknowledgement").innerHTML = xhttp.responseText;
+  	};
+  	xhttp.open("GET", "php/new_supplier.php?name=" + supplier_name.value + "&email=" + supplier_email.value + "&contact_number=" + contact_number.value + "&address=" + supplier_address.value, true);
+  	xhttp.send();
+  }
+}
