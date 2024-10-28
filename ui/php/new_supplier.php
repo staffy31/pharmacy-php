@@ -9,6 +9,13 @@ $address = ucwords($_GET["address"]);
 $jsonFile = '../../data/suppliers.json';
 $data = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), true) : [];
 
+// Determine the next available ID
+$nextId = 1;
+if (!empty($data)) {
+    $ids = array_column($data, 'id');
+    $nextId = max($ids) + 1;
+}
+
 // Check if the supplier already exists by name
 $supplierExists = false;
 foreach ($data as $supplier) {
@@ -23,6 +30,7 @@ if ($supplierExists) {
 } else {
     // Append the new supplier data
     $newSupplier = [
+        "id" => $nextId,
         "name" => $name,
         "email" => $email,
         "contact_number" => $contact_number,
@@ -37,4 +45,3 @@ if ($supplierExists) {
         echo "Failed to add $name!";
     }
 }
-?>

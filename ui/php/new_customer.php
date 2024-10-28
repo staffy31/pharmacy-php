@@ -17,6 +17,13 @@ if (file_exists($jsonFilePath)) {
     $customers = [];
 }
 
+// Determine the next available ID
+$nextId = 1;
+if (!empty($data)) {
+    $ids = array_column($data, 'ID');
+    $nextId = max($ids) + 1;
+}
+
 // Check if the customer already exists
 $customerExists = false;
 foreach ($customers as $customer) {
@@ -30,6 +37,7 @@ foreach ($customers as $customer) {
 // Add new customer if not already present
 if (!$customerExists) {
     $newCustomer = [
+        "ID" => $nextId,
         'NAME' => $name,
         'CONTACT_NUMBER' => $contact_number,
         'ADDRESS' => $address,
@@ -45,4 +53,3 @@ if (!$customerExists) {
         echo "Failed to add $name!";
     }
 }
-?>

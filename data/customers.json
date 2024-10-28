@@ -1,9 +1,34 @@
 [
-  {
-    "NAME": "Moula",
-    "CONTACT_NUMBER": "0781186548",
-    "ADDRESS": "GAHANGA Kigali Rwanda",
-    "DOCTOR_NAME": "Muhima",
-    "DOCTOR_ADDRESS": "GAHANGA Kigali Rwanda"
-  }
+    {
+        "ID": 1,
+        "NAME": "Moula",
+        "CONTACT_NUMBER": "0781186548",
+        "ADDRESS": "GAHANGA Kigali Rwanda",
+        "DOCTOR_NAME": "Muhima",
+        "DOCTOR_ADDRESS": "GAHANGA Kigali Rwanda"
+    },
+    {
+        "ID": 1,
+        "NAME": "NKUBITO ",
+        "CONTACT_NUMBER": "0781286568",
+        "ADDRESS": "GAHANGA Kigali",
+        "DOCTOR_NAME": "Yamoula",
+        "DOCTOR_ADDRESS": "GAHANGA Kigali"
+    },
+    {
+        "ID": 1,
+        "NAME": "Tito ",
+        "CONTACT_NUMBER": "0781386568",
+        "ADDRESS": "GAHANGA Kigali",
+        "DOCTOR_NAME": "Yamoula",
+        "DOCTOR_ADDRESS": "GAHANGA Kigali"
+    },
+    {
+        "ID": 1,
+        "NAME": "NKUSI",
+        "CONTACT_NUMBER": "0781486568",
+        "ADDRESS": "GAHANGA Kigali",
+        "DOCTOR_NAME": "Yamoula",
+        "DOCTOR_ADDRESS": "GAHANGA Kigali"
+    }
 ]
