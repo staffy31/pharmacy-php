@@ -30,5 +30,21 @@
         "ADDRESS": "GAHANGA Kigali",
         "DOCTOR_NAME": "Yamoula",
         "DOCTOR_ADDRESS": "GAHANGA Kigali"
+    },
+    {
+        "ID": 2,
+        "NAME": "NKUBANA",
+        "CONTACT_NUMBER": "0782486568",
+        "ADDRESS": "GAHANGA Kigali",
+        "DOCTOR_NAME": "Yamoula",
+        "DOCTOR_ADDRESS": "GAHANGA Kigali"
+    },
+    {
+        "ID": 3,
+        "NAME": "NKURI",
+        "CONTACT_NUMBER": "0784186568",
+        "ADDRESS": "GAHANGA KICUKIRO",
+        "DOCTOR_NAME": "THOM",
+        "DOCTOR_ADDRESS": "GAHANGA KICUKIRO"
     }
 ]
