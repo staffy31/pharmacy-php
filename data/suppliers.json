@@ -12,5 +12,12 @@
         "email": "ADAM@ADA.COM",
         "contact_number": "0783186668",
         "address": "GAHANGA KICUKIRO"
+    },
+    {
+        "id": 3,
+        "name": "Moula",
+        "email": "mou@mou.com",
+        "contact_number": "0981176548",
+        "address": "GAHANGA Kigali"
     }
 ]

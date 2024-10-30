@@ -4,7 +4,7 @@ $file_path = '../data/medicines.json';
 // Check if the JSON file exists, read it, or initialize an empty array
 function loadMedicines()
 {
-  global $file_path;
+  $file_path = '../data/medicines.json';
   if (file_exists($file_path)) {
     $json_data = file_get_contents($file_path);
     return json_decode($json_data, true) ?? [];
