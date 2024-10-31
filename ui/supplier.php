@@ -9,6 +9,7 @@
   <script src="../bootstrap/js/bootstrap.min.js"></script>
   <link href="../dist/css/icons/font-awesome/css/fontawesome-all.min.css" rel="stylesheet">
   <link href="../dist/css/icons/material-design-iconic-font/css/materialdesignicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="../dist/css/icons/themify-icons/themify-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/sidenav.css">
   <link rel="stylesheet" href="../css/home.css">
