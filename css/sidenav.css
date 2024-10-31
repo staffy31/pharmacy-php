@@ -64,7 +64,7 @@ body {
 
 .treeview-menu {
   margin-top: 8px;
-  width: 120%;
+  width: 100%;
   transform: translateX(-5%);
 }
 
@@ -72,9 +72,13 @@ body {
   display: block;
 }
 
+.treeview:hover{
+  background-color: #8eb6f3;
+}
+
 .treeview-menu .treeview a {
   color: #111111;
-  width: 100%;
+  width: 99%;
   text-decoration: none;
   font-size: 16px;
   background-color: #f1f3f6;
