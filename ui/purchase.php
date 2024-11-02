@@ -73,13 +73,6 @@
             <code class="text-danger small font-weight-bold float-right" id="invoice_number_error" style="display: none;"></code>
           </div>
 
-          <!--
-            <div class="col col-md-2 form-group">
-              <label class="font-weight-bold" for="">Voucher Number :</label>
-              <input type="number" class="form-control" placeholder="Voucher Number" name="voucher_number">
-            </div>
-            -->
-
           <div class="col col-md-2 form-group">
             <label class="font-weight-bold" for="paytype">Payment Type :</label>
             <select id="payment_type" name="paytype" class="form-control">
