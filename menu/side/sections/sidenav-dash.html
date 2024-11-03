@@ -48,7 +48,7 @@
       </div>
       <!-- logo class -->
       <!-- dashboard start -->
-      <div class="main-menu-item">
+      <div id="first" class="main-menu-item">
         <a href="../../ui/index.php" class=" btn btn-secondary px-4 w-100 text-light">
           <i class="fa fa-dashboard"></i><span>Dashboard</span>
         </a>
@@ -56,67 +56,69 @@
       <!-- dashboard end -->
       
       <!-- New customer strat -->
-      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
-        <a href="../../ui/customer.php" class=" btn btn-info px-4 w-100">
-          <!-- <i class="fa fa-pills"></i> -->
-          <span>New customer</span>
+      <div id="second" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="#" class=" btn btn-info px-4 w-100">
+          <span>Customer</span>
         </a>
+        <ul class="treeview-menu " style="display: none;">
+      		<li class="treeview"><a href="../../ui/customer.php" class=" btn btn-info px-4 m-1">New Customer</a></li>
+      		<li class="treeview"><a href="../../ui/control_customer.php" class=" btn btn-info px-4 m-1">Customer List</a></li>
+      	</ul>
       </div>
       <!-- New customer end -->
       
       <!-- SUPPLIER strat -->
-      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
-        <a href="../../ui/supplier.php" class=" btn btn-info px-4 w-100">
-          <!-- <i class="fa fa-pills"></i> -->
-          <span>New Supplier</span>
+      <div id="third" class="main-menu-item" onclick="showhide(this.id);">
+        <a href="#" class=" btn btn-info px-4 w-100">
+          <span> Supplier</span>
         </a>
+        <ul class="treeview-menu" style="display: none;">
+      		<li class="treeview"><a href="../../ui/supplier.php">New Supplier</a></li>
+      		<li class="treeview"><a href="#">Supplier List</a></li>
+      	</ul>
       </div>
       <!-- SUPPLIER end -->
       
-      <!-- Application2 strat -->
-      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+      <!-- Medicine strat -->
+      <div id="fourth" class="main-menu-item" onclick="showhide(this.id);">
         <a href="#" class=" btn btn-info px-4 w-100">
-          <!-- <i class="fa fa-pills"></i> -->
-          <span>Application2</span>
+          <span> Medicine</span>
         </a>
+        <ul class="treeview-menu" style="display: none;">
+      		<li class="treeview"><a href="../../ui/medicine.php">New Medicine</a></li>
+      		<li class="treeview"><a href="#">Medicine List</a></li>
+          <li class="treeview"><a href="#">Medicine Stock</a></li>
+      	</ul>
       </div>
-      <!-- Application2 end -->
+      <!-- Medicine end -->
       
-      <!-- Application3 strat -->
-      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+      <!-- Purchase strat -->
+      <div id="fifth" class="main-menu-item" onclick="showhide(this.id);">
         <a href="#" class=" btn btn-info px-4 w-100">
-          <!-- <i class="fa fa-pills"></i> -->
-          <span>Application3</span>
+          <span>Purchase</span>
         </a>
+      	<ul class="treeview-menu" style="display: none;">
+      		<li class="treeview"><a href="../../ui/purchase.php">New Purchase</a></li>
+      		<li class="treeview"><a href="#"> Purchase List</a></li>
+      	</ul>
       </div>
-      <!-- Application3 end -->
+      <!-- Purchase end -->
       
       <!-- Application4 strat -->
-      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+      <div id="sixth" class="main-menu-item" onclick="showhide(this.id);">
         <a href="#" class=" btn btn-info px-4 w-100">
-          <!-- <i class="fa fa-pills"></i> -->
           <span>Application4</span>
         </a>
       </div>
       <!-- Application4 end -->
       
       <!-- Application5 strat -->
-      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
+      <div id="seventh" class="main-menu-item" onclick="showhide(this.id);">
         <a href="#" class=" btn btn-info px-4 w-100">
-          <!-- <i class="fa fa-pills"></i> -->
           <span>Application5</span>
         </a>
       </div>
       <!-- Application5 end -->
-      
-      <!-- Database strat -->
-      <div id="first" class="main-menu-item" onclick="showhide(this.id);">
-        <a href="../../ui/database.php" class=" btn btn-info px-4 w-100">
-          <!-- <i class="fa fa-pills"></i> -->
-          <span>Database</span>
-        </a>
-      </div>
-      <!-- Database end -->
       
     </div>
     <!-- card-body class -->

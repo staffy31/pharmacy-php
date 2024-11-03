@@ -1,4 +1,23 @@
 <?php
+
+if (isset($_GET['action']) && $_GET['action'] == "add_row")
+  createMedicineInfoRow();
+
+if (isset($_GET['action']) && $_GET['action'] == "is_supplier")
+  isSupplier(strtoupper($_GET['name']));
+
+if (isset($_GET['action']) && $_GET['action'] == "is_invoice")
+  isInvoiceExist(strtoupper($_GET['invoice_number']));
+
+if (isset($_GET['action']) && $_GET['action'] == "is_new_medicine")
+  isNewMedicine(strtoupper($_GET['name']), strtoupper($_GET['packing']));
+
+if (isset($_GET['action']) && $_GET['action'] == "add_stock")
+  addStock();
+
+if (isset($_GET['action']) && $_GET['action'] == "add_new_purchase")
+  addNewPurchase();
+
 function loadJsonFile($filename)
 {
   if (file_exists($filename)) {
@@ -48,6 +67,7 @@ function isNewMedicine($name, $packing)
   }
   echo "true";
 }
+
 
 function addStock()
 {
@@ -169,3 +189,4 @@ function createMedicineInfoRow()
   </div>
 <?php
 }
+?>

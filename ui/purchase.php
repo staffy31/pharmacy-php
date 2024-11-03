@@ -92,7 +92,7 @@
 
         <div class="row col col-md-12">
           <div class="col col-md-2 font-weight-bold" style="color: green; cursor:pointer" onclick="document.getElementById('new_supplier_model').style.display = 'block';">
-            <i class="fa fa-plus"></i>&nbsp;Add New Supplier
+            <i class="fa fa-plus"></i>&nbsp;New Supplier
           </div>
         </div>
         <!-- supplier details content end -->
