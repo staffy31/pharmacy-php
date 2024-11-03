@@ -19,5 +19,12 @@
         "email": "mou@mou.com",
         "contact_number": "0981176548",
         "address": "GAHANGA Kigali"
+    },
+    {
+        "id": 4,
+        "name": "Purchina",
+        "email": "purchina@do.com",
+        "contact_number": "0798865487",
+        "address": "GAHANGA KIGALI"
     }
 ]

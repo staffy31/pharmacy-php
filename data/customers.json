@@ -46,5 +46,13 @@
         "ADDRESS": "GAHANGA KICUKIRO",
         "DOCTOR_NAME": "THOM",
         "DOCTOR_ADDRESS": "GAHANGA KICUKIRO"
+    },
+    {
+        "ID": 4,
+        "NAME": "Ntaganda",
+        "CONTACT_NUMBER": "0791196549",
+        "ADDRESS": "GAHANGA KIGALI",
+        "DOCTOR_NAME": "Mwenyewe",
+        "DOCTOR_ADDRESS": "GAHANGA KIGALI"
     }
 ]
