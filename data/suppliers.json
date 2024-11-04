@@ -26,5 +26,12 @@
         "email": "purchina@do.com",
         "contact_number": "0798865487",
         "address": "GAHANGA KIGALI"
+    },
+    {
+        "id": 5,
+        "name": "GAHANGA ",
+        "email": "purch",
+        "contact_number": "0771176547",
+        "address": "GAHANGA Nnnnn"
     }
 ]
