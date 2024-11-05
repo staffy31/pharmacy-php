@@ -107,7 +107,7 @@ body {
   border: 1px solid #ff5252;
 }
 
-#new_client_model,
+#new_customer_model,
 #new_supplier_model,
 #new_medicine_model {
   display: none;

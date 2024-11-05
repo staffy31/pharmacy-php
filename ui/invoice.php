@@ -34,8 +34,8 @@
   <div id="new_customer_model">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header" style="background-color: #ff5252; color: white">
-          <div class="font-weight-bold">Add New Customer</div>
+        <div class="modal-header" style="background-color: #09f; color: white">
+          <div class="font-weight-bold">New Customer</div>
           <button class="close" style="outline: none;" onclick="document.getElementById('new_customer_model').style.display = 'none';"><i class="fa fa-close"></i></button>
         </div>
         <div class="modal-body">
@@ -94,7 +94,7 @@
         <!-- new user button -->
         <div class="row col col-md-12">
           <div class="col col-md-2 form-group">
-            <button class="btn btn-primary form-control" onclick="document.getElementById('add_new_customer_model').style.display = 'block';">New Customer</button>
+            <button class="btn btn-primary form-control" onclick="document.getElementById('new_customer_model').style.display = 'block';">New Customer</button>
           </div>
           <div class="col col-md-1 form-group"></div>
           <div class="col col-md-2 form-group">
