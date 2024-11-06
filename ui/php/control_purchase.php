@@ -24,3 +24,26 @@ function showPurchases($id)
     echo "File not found.";
   }
 }
+
+
+function showPurchaseRow($seq_no, $row) {
+  ?>
+  <tr>
+    <td><?php echo $seq_no; ?></td>
+    <td><?php echo $row['VOUCHER_NUMBER']; ?></td>
+    <td><?php echo $row['SUPPLIER_NAME'] ?></td>
+    <td><?php echo $row['INVOICE_NUMBER']; ?></td>
+    <td><?php echo $row['PURCHASE_DATE']; ?></td>
+    <td><?php echo $row['TOTAL_AMOUNT']; ?></td>
+    <td><?php echo $row['PAYMENT_STATUS']; ?></td>
+    <td>
+      <button href="" class="btn btn-info btn-sm" onclick="editPurchase(<?php echo $row['VOUCHER_NUMBER']; ?>);">
+        <i class="fa fa-pencil"></i>
+      </button>
+      <button class="btn btn-danger btn-sm" onclick="deletePurchase(<?php echo $row['VOUCHER_NUMBER']; ?>);">
+        <i class="fa fa-trash"></i>
+      </button>
+    </td>
+  </tr>
+  <?php
+}
