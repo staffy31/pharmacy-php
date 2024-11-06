@@ -33,5 +33,12 @@
         "email": "purch",
         "contact_number": "0771176547",
         "address": "GAHANGA Nnnnn"
+    },
+    {
+        "id": 6,
+        "name": "Kiran Pharma",
+        "email": "kiran@kiran.com",
+        "contact_number": "0799665512",
+        "address": "GAHANGA Kgl"
     }
 ]

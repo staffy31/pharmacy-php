@@ -1,0 +1,10 @@
+[
+  {
+    "SUPPLIER_NAME": "Kiran Pharma",
+    "INVOICE_NUMBER": "1",
+    "VOUCHER_NUMBER": "1",
+    "PURCHASE_DATE": "2024-11-04",
+    "TOTAL_AMOUNT": "24",
+    "PAYMENT_STATUS": "PAID"
+  }
+]
