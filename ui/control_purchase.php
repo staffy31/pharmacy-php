@@ -79,7 +79,7 @@
               </thead>
               <tbody id="purchases_div">
                 <?php
-                require 'php/manage_purchase.php';
+                require 'php/control_purchase.php';
                 showPurchases(0);
                 ?>
               </tbody>
