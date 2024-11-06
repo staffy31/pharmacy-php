@@ -13,7 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/sidenav.css">
   <link rel="stylesheet" href="../css/home.css">
-  <script src="../js/control_supplier.js"></script>
+  <script src="../js/suggestions.js"></script>
+  <script src="../js/new_purchase.js"></script>
+  <script src="../js/control_purchase.js"></script>
   <script src="../js/validateForm.js"></script>
 
   <style>
@@ -35,16 +37,25 @@
       <!-- header section -->
       <?php
       require "../php/header.php";
-      createHeaderDash('home', 'Supplier List', '');
+      createHeaderDash('home', 'Purchase List', '');
       ?>
       <!-- header section end -->
 
       <!-- form content -->
       <div class="row">
-
         <div class="col-md-12 form-group form-inline">
           <label class="font-weight-bold" for="">Search :&emsp;</label>
-          <input type="text" class="form-control" id="" placeholder="Search Supplier" onkeyup="searchSupplier(this.value);">
+          <input type="number" class="form-control" id="by_voucher_number" placeholder="By Voucher Number" onkeyup="searchPurchase(this.value, 'VOUCHER_NUMBER');">
+          &emsp;<input type="text" class="form-control" id="by_suppliers_name" placeholder="By Supplier Name" onkeyup="searchPurchase(this.value, 'SUPPLIER_NAME');">
+          &emsp;<input type="number" class="form-control" id="by_invoice_number" placeholder="By Invoice" onkeyup="searchPurchase(this.value, 'INVOICE_NUMBER');">
+          &emsp;<label class="font-weight-bold" for="">By Purchase Date :&emsp;</label>
+          <input type="date" class="form-control" id="by_purchase_date" onchange="searchPurchase(this.value, 'PURCHASE_DATE');">
+          &emsp;
+          <select class="form-control" onchange="searchPurchase(this.value, 'PAYMENT_STATUS');">
+            <option value="DUE">DUE</option>
+            <option value="PAID">PAID</option>
+          </select>
+          &emsp;<button class="btn btn-success font-weight-bold" onclick="cancel();"><i class="fa fa-refresh"></i></button>
         </div>
 
         <div class="col col-md-12">
@@ -56,20 +67,20 @@
             <table class="table table-bordered table-striped table-hover">
               <thead>
                 <tr>
-                  <th style="width: 5%;">SL</th>
-                  <th style="width: 10%;">ID</th>
-                  <th style="width: 20%;">Name</th>
-                  <th style="width: 15%;">Email</th>
-                  <th style="width: 15%;">Contact Number</th>
-                  <th style="width: 20%;">Address</th>
-                  <th style="width: 15%;">Action</th>
+                  <th style="width: 1%;">SL.</th>
+                  <th style="width: 12%;">Voucher Number</th>
+                  <th style="width: 18%;">Supplier Name</th>
+                  <th style="width: 12%;">Invoice Number</th>
+                  <th style="width: 15%;">Purchase Date</th>
+                  <th style="width: 10%;">Total Amount</th>
+                  <th style="width: 12%;">Payment Status</th>
+                  <th style="width: 12%;">Action</th>
                 </tr>
               </thead>
-              <tbody id="suppliers_div">
+              <tbody id="purchases_div">
                 <?php
-                require 'php/control_supplier.php';
-
-                showSuppliers($data,0);
+                require 'php/manage_purchase.php';
+                showPurchases(0);
                 ?>
               </tbody>
             </table>
@@ -77,6 +88,7 @@
         </div>
 
       </div>
+      <!-- form content end -->
 
     </div>
   </div>
