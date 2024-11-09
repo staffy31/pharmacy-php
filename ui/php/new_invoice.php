@@ -142,3 +142,56 @@ function addNewInvoice()
     }
   }
 }
+function addSale()
+{
+
+  $customer_id = getCustomerId(strtoupper($_GET['customers_name']), $_GET['customers_contact_number']);
+  $invoice_number = $_GET['invoice_number'];
+  $medicine_name = $_GET['medicine_name'];
+  $batch_id = $_GET['batch_id'];
+  $expiry_date = $_GET['expiry_date'];
+  $quantity = $_GET['quantity'];
+  $mrp = $_GET['mrp'];
+  $discount = $_GET['discount'];
+  $total = $_GET['total'];
+
+  $jsonFilePath = '../data/sales.json';
+
+  $newSale = [
+    'ID' => 1,
+    "CUSTOMER_ID" => $customer_id,
+    "INVOICE_NUMBER" => $invoice_number,
+    "MEDICINE_NAME" => $medicine_name,
+    "BATCH_ID" => $batch_id,
+    "EXPIRY_DATE" => $expiry_date,
+    "QUANTITY" => $quantity,
+    "MRP" => $mrp,
+    "DISCOUNT" => $discount,
+    "TOTAL" => $total
+  ];
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = json_decode(file_get_contents($jsonFilePath), true);
+
+    if ($jsonData) {
+      $jsonData[] = $newSale;
+
+      $jsonDataEncoded = json_encode($jsonData, JSON_PRETTY_PRINT);
+
+      if (file_put_contents($jsonFilePath, $jsonDataEncoded)) {
+        echo "Inserted sale";
+      } else {
+        echo "Failed to add sale...";
+      }
+    } else {
+      echo "Error: Failed to decode JSON data.";
+    }
+  } else {
+    $initialData = json_encode([$newSale], JSON_PRETTY_PRINT);
+    if (file_put_contents($jsonFilePath, $initialData)) {
+      echo "Inserted sale";
+    } else {
+      echo "Failed to create the JSON file...";
+    }
+  }
+}
