@@ -48,6 +48,7 @@ function isCustomer($name, $contact_number)
           break;
         }
       }
+      echo $found ? "true" : "false";
     } else {
       echo "Error: Failed to decode JSON data.";
     }
@@ -56,6 +57,30 @@ function isCustomer($name, $contact_number)
   }
 }
 
+function getCustomerId($name, $contact_number)
+{
+  $name = strtoupper($name);
+
+  $jsonFilePath = '../data/customers.json';
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = json_decode(file_get_contents($jsonFilePath), true);
+
+    if ($jsonData) {
+      foreach ($jsonData as $customer) {
+        if (strtoupper($customer['NAME']) === $name && $customer['CONTACT_NUMBER'] === $contact_number) {
+          return $customer['ID'];
+        }
+      }
+    } else {
+      echo "Error: Failed to decode JSON data.";
+    }
+  } else {
+    echo "Error: JSON file not found.";
+  }
+
+  return 0;
+}
 
 function createMedicineInfoRow()
 {
