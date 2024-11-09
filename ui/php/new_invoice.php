@@ -57,10 +57,11 @@ function isCustomer($name, $contact_number)
 }
 
 
-function createMedicineInfoRow() {
+function createMedicineInfoRow()
+{
   $row_id = $_GET['row_id'];
   $row_number = $_GET['row_number'];
-  ?>
+?>
   <div class="row col col-md-12">
     <div class="col-md-2">
       <input id="medicine_name_<?php echo $row_number; ?>" name="medicine_name" class="form-control" list="medicine_list_<?php echo $row_number; ?>" placeholder="Select Medicine" onkeydown="medicineOptions(this.value, 'medicine_list_<?php echo $row_number; ?>');" onfocus="medicineOptions(this.value, 'medicine_list_<?php echo $row_number; ?>');" onchange="fillFields(this.value, '<?php echo $row_number; ?>');">
@@ -86,7 +87,7 @@ function createMedicineInfoRow() {
       <button class="btn btn-primary" onclick="addRow();">
         <i class="fa fa-plus"></i>
       </button>
-      <button class="btn btn-danger"  onclick="removeRow('<?php echo $row_id ?>');">
+      <button class="btn btn-danger" onclick="removeRow('<?php echo $row_id ?>');">
         <i class="fa fa-trash"></i>
       </button>
     </div>
@@ -94,6 +95,50 @@ function createMedicineInfoRow() {
   <div class="col col-md-12">
     <hr class="col-md-12" style="padding: 0px;">
   </div>
-  <?php
+<?php
 }
+function addNewInvoice()
+{
 
+  $customer_id = getCustomerId(strtoupper($_GET['customers_name']), $_GET['customers_contact_number']);
+  $invoice_date = $_GET['invoice_date'];
+  $total_amount = $_GET['total_amount'];
+  $total_discount = $_GET['total_discount'];
+  $net_total = $_GET['net_total'];
+
+  $jsonFilePath = '../data/invoices.json';
+
+  $newInvoice = [
+    'ID' => 1,
+    "CUSTOMER_ID" => $customer_id,
+    "INVOICE_DATE" => $invoice_date,
+    "TOTAL_AMOUNT" => $total_amount,
+    "TOTAL_DISCOUNT" => $total_discount,
+    "NET_TOTAL" => $net_total
+  ];
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = json_decode(file_get_contents($jsonFilePath), true);
+
+    if ($jsonData) {
+      $jsonData[] = $newInvoice;
+
+      $jsonDataEncoded = json_encode($jsonData, JSON_PRETTY_PRINT);
+
+      if (file_put_contents($jsonFilePath, $jsonDataEncoded)) {
+        echo "Invoice saved...";
+      } else {
+        echo "Failed to save the invoice...";
+      }
+    } else {
+      echo "Error: Failed to decode JSON data.";
+    }
+  } else {
+    $initialData = json_encode([$newInvoice], JSON_PRETTY_PRINT);
+    if (file_put_contents($jsonFilePath, $initialData)) {
+      echo "Invoice saved...";
+    } else {
+      echo "Failed to create the JSON file...";
+    }
+  }
+}
