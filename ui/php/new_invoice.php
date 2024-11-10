@@ -57,6 +57,64 @@ function isCustomer($name, $contact_number)
   }
 }
 
+function isInvoiceExist($invoice_number)
+{
+  $jsonFilePath = '../data/sales.json';
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = file_get_contents($jsonFilePath);
+
+    $salesData = json_decode($jsonData, true);
+
+    if ($salesData !== null) {
+      $found = false;
+
+      foreach ($salesData as $sale) {
+        if (isset($sale['INVOICE_NUMBER']) && $sale['INVOICE_NUMBER'] == $invoice_number) {
+          $found = true;
+          break;
+        }
+      }
+
+      echo ($found) ? "true" : "false";
+    } else {
+      echo "Error decoding JSON.";
+    }
+  } else {
+    echo "File not found.";
+  }
+}
+
+function isMedicine($name)
+{
+  $jsonFilePath = '../data/medicines_stock.json';
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = file_get_contents($jsonFilePath);
+
+    $medicinesData = json_decode($jsonData, true);
+
+    if ($medicinesData !== null) {
+      $found = false;
+
+      $name = strtoupper($name);
+
+      foreach ($medicinesData as $medicine) {
+        if (isset($medicine['NAME']) && strtoupper($medicine['NAME']) == $name) {
+          $found = true;
+          break;
+        }
+      }
+
+      echo ($found) ? "true" : "false";
+    } else {
+      echo "Error decoding JSON.";
+    }
+  } else {
+    echo "File not found.";
+  }
+}
+
 function getCustomerId($name, $contact_number)
 {
   $name = strtoupper($name);
