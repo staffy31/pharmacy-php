@@ -91,21 +91,16 @@ function isMedicine($name)
 
   if (file_exists($jsonFilePath)) {
     $jsonData = file_get_contents($jsonFilePath);
-
     $medicinesData = json_decode($jsonData, true);
-
     if ($medicinesData !== null) {
       $found = false;
-
       $name = strtoupper($name);
-
       foreach ($medicinesData as $medicine) {
         if (isset($medicine['NAME']) && strtoupper($medicine['NAME']) == $name) {
           $found = true;
           break;
         }
       }
-
       echo ($found) ? "true" : "false";
     } else {
       echo "Error decoding JSON.";
@@ -180,6 +175,69 @@ function createMedicineInfoRow()
   </div>
 <?php
 }
+
+function fill($name, $column)
+{
+  $jsonFilePath = '../data/medicines_stock.json';
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = file_get_contents($jsonFilePath);
+
+    $medicinesData = json_decode($jsonData, true);
+
+    if ($medicinesData !== null) {
+      $name = strtoupper($name);
+
+      $found = false;
+
+      foreach ($medicinesData as $medicine) {
+        if (isset($medicine['NAME']) && strtoupper($medicine['NAME']) == $name) {
+          if (isset($medicine[$column])) {
+            echo $medicine[$column];
+          } else {
+            echo "Column not found.";
+          }
+          $found = true;
+          break;
+        }
+      }
+
+      if (!$found) {
+        echo "Medicine not found.";
+      }
+    } else {
+      echo "Error decoding JSON.";
+    }
+  } else {
+    echo "File not found.";
+  }
+}
+
+function showMedicineList($text)
+{
+  $jsonFilePath = '../data/medicines_stock.json';
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = file_get_contents($jsonFilePath);
+
+    $medicinesData = json_decode($jsonData, true);
+
+    if ($medicinesData !== null) {
+      $text = strtoupper($text);
+
+      foreach ($medicinesData as $medicine) {
+        if ($text == "" || (isset($medicine['NAME']) && strpos(strtoupper($medicine['NAME']), $text) !== false)) {
+          echo '<option value="' . $medicine['NAME'] . '">' . $medicine['NAME'] . '</option>';
+        }
+      }
+    } else {
+      echo "Error decoding JSON.";
+    }
+  } else {
+    echo "File not found.";
+  }
+}
+
 function addNewInvoice()
 {
 
