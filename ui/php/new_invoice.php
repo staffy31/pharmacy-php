@@ -213,6 +213,49 @@ function fill($name, $column)
   }
 }
 
+function updateStock($name, $batch_id, $quantity)
+{
+  $jsonFilePath = '../data/medicines_stock.json';
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = file_get_contents($jsonFilePath);
+
+    $medicinesData = json_decode($jsonData, true);
+
+    if ($medicinesData !== null) {
+      $name = strtoupper($name);
+
+      $updated = false;
+
+      foreach ($medicinesData as &$medicine) {
+        if (isset($medicine['NAME']) && strtoupper($medicine['NAME']) == $name && $medicine['BATCH_ID'] == $batch_id) {
+          if (isset($medicine['QUANTITY'])) {
+            $medicine['QUANTITY'] -= $quantity;
+            $updated = true;
+          } else {
+            echo "Quantity field not found.";
+          }
+          break;
+        }
+      }
+
+      if ($updated) {
+        if (file_put_contents($jsonFilePath, json_encode($medicinesData, JSON_PRETTY_PRINT))) {
+          echo "Stock updated";
+        } else {
+          echo "Failed to save the updated stock.";
+        }
+      } else {
+        echo "Record not found.";
+      }
+    } else {
+      echo "Error decoding JSON.";
+    }
+  } else {
+    echo "File not found.";
+  }
+}
+
 function showMedicineList($text)
 {
   $jsonFilePath = '../data/medicines_stock.json';
