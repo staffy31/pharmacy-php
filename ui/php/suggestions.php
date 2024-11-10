@@ -1,14 +1,11 @@
 
 <?php
-// Define JSON file paths
 $supplierFile = '../../data/suppliers.json';
 $customerFile = '../../data/customers.json';
 $medicineFile = '../../data/medicines.json';
 
-if (isset($_GET['action'])) {
-  $action = $_GET['action'];
-
-  switch ($action) {
+if (isset($_GET['action'])) { 
+  switch ($_GET['action']) {
     case "supplier":
       showSuggestions($supplierFile, "supplier");
       break;
@@ -27,40 +24,63 @@ if (isset($_GET['action'])) {
   }
 }
 
-function showSuggestions($filePath, $action)
-{
-  $text = strtoupper($_GET["text"]);
-  echo $action;
+function showSuggestions($jsonFile, $action) {
+  if (file_exists($jsonFile)) {
+    $jsonData = file_get_contents($jsonFile);
+    $data = json_decode($jsonData, true);
 
-  // Load JSON data from file
-  $data = file_exists($filePath) ? json_decode(file_get_contents($filePath), true) : [];
+    if ($data !== null) {
+      $text = strtoupper($_GET["text"]);
+      $found = false;
 
-  $found = false;
-  foreach ($data as $item) {
-    if (strpos(strtoupper($item['name']), $text) !== false) {
-      $found = true;
-      echo '<input type="button" class="list-group-item list-group-item-action" value="' . $item['name'] . '" style="padding: 5px; outline: none;" onclick="suggestionClick(this.value, \'' . $action . '\');">';
+      // Search for matching names
+      foreach ($data as $entry) {
+        if (isset($entry['NAME']) && strpos(strtoupper($entry['NAME']), $text) !== false) {
+          echo '<input type="button" class="list-group-item list-group-item-action" value="' . $entry['NAME'] . '" style="padding: 5px; outline: none;" onclick="suggestionClick(this.value, \'' . $action . '\');">';
+          $found = true;
+        }
+      }
+
+      if (!$found) {
+        echo '<div class="list-group-item list-group-item-action font-italic" style="padding: 5px;" disabled>No suggestions...</div>';
+      }
+    } else {
+      echo "Error decoding JSON.";
     }
-  }
-
-  if (!$found) {
-    echo '<div class="list-group-item list-group-item-action font-italic" style="padding: 5px;" disabled>No suggestions...</div>';
+  } else {
+    echo "File not found.";
   }
 }
 
-function getValue($filePath, $column)
-{
-  $name = $_GET['name'];
+function getValue($jsonFile, $column) {
+  if (file_exists($jsonFile)) {
+    $jsonData = file_get_contents($jsonFile);
+    $data = json_decode($jsonData, true);
 
-  // Load JSON data from file
-  $data = file_exists($filePath) ? json_decode(file_get_contents($filePath), true) : [];
+    if ($data !== null) {
+      $name = $_GET['name'];
+      $found = false;
 
-  foreach ($data as $item) {
-    if (strtoupper($item['name']) === strtoupper($name)) {
-      echo $item[$column];
-      return;
+      foreach ($data as $entry) {
+        if (isset($entry['NAME']) && $entry['NAME'] === $name) {
+          if (isset($entry[$column])) {
+            echo $entry[$column];
+          } else {
+            echo "Column not found.";
+          }
+          $found = true;
+          break;
+        }
+      }
+
+      if (!$found) {
+        echo "Name not found.";
+      }
+    } else {
+      echo "Error decoding JSON.";
     }
+  } else {
+    echo "File not found.";
   }
-  echo "No data found.";
 }
 ?>

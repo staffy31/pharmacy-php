@@ -176,6 +176,34 @@ function createMedicineInfoRow()
 <?php
 }
 
+function getInvoiceNumber()
+{
+  $jsonFilePath = '../data/invoices.json';
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = file_get_contents($jsonFilePath);
+
+    $invoicesData = json_decode($jsonData, true);
+
+    if ($invoicesData !== null) {
+      $maxId = 0;
+
+      foreach ($invoicesData as $invoice) {
+        if (isset($invoice['ID']) && is_numeric($invoice['ID'])) {
+          $maxId = max($maxId, $invoice['ID']);
+        }
+      }
+
+      $nextId = $maxId + 1;
+      echo $nextId;
+    } else {
+      echo "Error decoding JSON.";
+    }
+  } else {
+    echo "File not found.";
+  }
+}
+
 function fill($name, $column)
 {
   $jsonFilePath = '../data/medicines_stock.json';
@@ -204,6 +232,43 @@ function fill($name, $column)
 
       if (!$found) {
         echo "Medicine not found.";
+      }
+    } else {
+      echo "Error decoding JSON.";
+    }
+  } else {
+    echo "File not found.";
+  }
+}
+
+function checkAvailableQuantity($name)
+{
+  $jsonFilePath = '../data/medicines_stock.json';
+
+  if (file_exists($jsonFilePath)) {
+    $jsonData = file_get_contents($jsonFilePath);
+
+    $medicinesData = json_decode($jsonData, true);
+
+    if ($medicinesData !== null) {
+      $name = strtoupper($name);
+
+      $found = false;
+
+      foreach ($medicinesData as $medicine) {
+        if (isset($medicine['NAME']) && strtoupper($medicine['NAME']) == $name) {
+          if (isset($medicine['QUANTITY'])) {
+            echo $medicine['QUANTITY'];
+          } else {
+            echo "Quantity not found.";
+          }
+          $found = true;
+          break;
+        }
+      }
+
+      if (!$found) {
+        echo "false";
       }
     } else {
       echo "Error decoding JSON.";
