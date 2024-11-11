@@ -31,8 +31,9 @@ function showInvoices()
   }
 }
 
-function showInvoiceRow($seq_no, $row) {
-  ?>
+function showInvoiceRow($seq_no, $row)
+{
+?>
   <tr>
     <td><?php echo $seq_no; ?></td>
     <td><?php echo $row['INVOICE_ID']; ?></td>
@@ -50,5 +51,39 @@ function showInvoiceRow($seq_no, $row) {
       </button>
     </td>
   </tr>
-  <?php
+<?php
+}
+
+function searchInvoice($text, $column)
+{
+  $file_path = '../data/invoices.json';
+
+  if (file_exists($file_path)) {
+    $json_data = file_get_contents($file_path);
+    $invoices = json_decode($json_data, true);
+
+    if ($invoices !== null) {
+      $seq_no = 0;
+      $filtered_invoices = [];
+
+      foreach ($invoices as $row) {
+        if ($column == 'INVOICE_ID' && strpos((string)$row['INVOICE_ID'], $text) !== false) {
+          $filtered_invoices[] = $row;
+        } elseif ($column == 'INVOICE_DATE' && $row['INVOICE_DATE'] == $text) {
+          $filtered_invoices[] = $row;
+        } elseif (isset($row[$column]) && strpos(strtoupper($row[$column]), strtoupper($text)) !== false) {
+          $filtered_invoices[] = $row;
+        }
+      }
+
+      foreach ($filtered_invoices as $row) {
+        $seq_no++;
+        showInvoiceRow($seq_no, $row);
+      }
+    } else {
+      echo "Failed to decode JSON data.";
+    }
+  } else {
+    echo "JSON file not found.";
+  }
 }
