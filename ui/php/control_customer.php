@@ -49,6 +49,8 @@ if (file_exists($jsonFilePath)) {
   }
 
   if ($action == "search") {
+    echo',,,'.$_GET["text"].'...'.$action;
+
     searchCustomer(strtoupper($_GET["text"]));
   }
 }

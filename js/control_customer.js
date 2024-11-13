@@ -63,6 +63,7 @@ function searchCustomer(text) {
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState = 4 && xhttp.status == 200)
       document.getElementById('customers_div').innerHTML = xhttp.responseText;
+    alert(xhttp.responseText);
   };
   xhttp.open("GET", "../ui/php/control_customer.php?action=search&text=" + text, true);
   xhttp.send();
