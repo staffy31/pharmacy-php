@@ -17,7 +17,6 @@
   <script src="../js/new_invoice.js"></script>
   <script src="../js/control_invoice.js"></script>
   <script src="../js/validateForm.js"></script>
-
   <style>
     body {
       margin: 0;

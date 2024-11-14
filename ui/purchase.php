@@ -62,7 +62,7 @@
 
           <div class="col col-md-4 form-group">
             <label class="font-weight-bold" for="suppliers_name">Supplier :</label>
-            <input id="suppliers_name" type="text" class="form-control" placeholder="Supplier Name" name="suppliers_name" onkeyup="showSuggestions(this.value, 'supplier');">
+            <input id="suppliers_name" type="text" class="form-control" placeholder="Supplier Name" name="suppliers_name" onkeyup="showSuggestionsSupplier(this.value, 'supplier');">
             <code class="text-danger small font-weight-bold float-right" id="supplier_name_error" style="display: none;"></code>
             <div id="supplier_suggestions" class="list-group position-fixed" style="z-index: 1; width: 25.10%; overflow: auto; max-height: 200px;"></div>
           </div>

@@ -8,6 +8,16 @@ function showSuggestions(text, action) {
   xhttp.send();
 }
 
+function showSuggestionsSupplier(text, action) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if(xhttp.readyState = 4 && xhttp.status == 200)
+      document.getElementById(action + "_suggestions").innerHTML = xhttp.responseText;
+  };
+  xhttp.open("GET", "../ui/php/suggestions.php?action=" + action + "&text=" + text, true);
+  xhttp.send();
+}
+
 function clearSuggestions(id) { 
   var div = document.getElementById(id + "_suggestions");
   if(div)
