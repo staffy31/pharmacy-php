@@ -4,7 +4,7 @@ function showSuggestions(text, action) {
     if(xhttp.readyState = 4 && xhttp.status == 200)
       document.getElementById(action + "_suggestions").innerHTML = xhttp.responseText;
   };
-  xhttp.open("GET", "php/suggestions.php?action=" + action + "&text=" + text, true);
+  xhttp.open("GET", "../ui/php/suggestions.php?action=" + action + "&text=" + text, true);
   xhttp.send();
 }
 
@@ -17,7 +17,8 @@ function clearSuggestions(id) {
 function suggestionClick(value, id) {
   document.getElementById(id + "s_name").value = value;
   if(id == "customer") {
-    console.log(value + " = value & id = " + id);
+    // alert(value + " = value & id = " + id);
+    // console.log(value + " = value & id = " + id);
     fillCustomerDetails(value);
   }
   clearSuggestions(id);
@@ -25,7 +26,8 @@ function suggestionClick(value, id) {
 }
 
 function fillCustomerDetails(name) {
-  console.log(name);
+  // alert(name);
+  // console.log(name);
   getCustomerDetail("customers_address", name);
   getCustomerDetail("customers_contact_number", name);
 }
@@ -35,8 +37,9 @@ function getCustomerDetail(id, name) {
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState = 4 && xhttp.status == 200)
       document.getElementById(id).value = xhttp.responseText;
+    // alert(xhttp.responseText);
   };
-  xhttp.open("GET", "php/suggestions.php?action=" + id + "&name=" + name, true);
+  xhttp.open("GET", "../ui/php/suggestions.php?action=" + id + "&name=" + name, true);
   xhttp.send();
 }
 

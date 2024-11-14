@@ -131,7 +131,7 @@ function addCustomer() {
   		if(xhttp.readyState = 4 && xhttp.status == 200)
   			document.getElementById("customer_acknowledgement").innerHTML = xhttp.responseText;
   	};
-  	xhttp.open("GET", "php/new_customer.php?name=" + customer_name.value + "&contact_number=" + contact_number.value + "&address=" + customer_address.value + "&doctor_name=" + doctor_name.value + "&doctor_address=" + doctor_address.value, true);
+  	xhttp.open("GET", "../ui/php/new_customer.php?name=" + customer_name.value + "&contact_number=" + contact_number.value + "&address=" + customer_address.value + "&doctor_name=" + doctor_name.value + "&doctor_address=" + doctor_address.value, true);
   	xhttp.send();
   } 
   return false;
@@ -155,7 +155,7 @@ function addSupplier() {
   		if(xhttp.readyState = 4 && xhttp.status == 200)
   			document.getElementById("supplier_acknowledgement").innerHTML = xhttp.responseText;
   	};
-  	xhttp.open("GET", "php/new_supplier.php?name=" + supplier_name.value + "&email=" + supplier_email.value + "&contact_number=" + contact_number.value + "&address=" + supplier_address.value, true);
+  	xhttp.open("GET", "../ui/php/new_supplier.php?name=" + supplier_name.value + "&email=" + supplier_email.value + "&contact_number=" + contact_number.value + "&address=" + supplier_address.value, true);
   	xhttp.send();
   }
 }
@@ -178,7 +178,7 @@ function addMedicine() {
   		if(xhttp.readyState = 4 && xhttp.status == 200)
   			document.getElementById("medicine_acknowledgement").innerHTML = xhttp.responseText;
   	};
-  	xhttp.open("GET", "php/new_medicine.php?name=" + name.value + "&packing=" + packing.value + "&generic_name=" + generic_name.value + "&suppliers_name=" + suppliers_name.value, true);
+  	xhttp.open("GET", "../ui/php/new_medicine.php?name=" + name.value + "&packing=" + packing.value + "&generic_name=" + generic_name.value + "&suppliers_name=" + suppliers_name.value, true);
   	xhttp.send();
   }
 }

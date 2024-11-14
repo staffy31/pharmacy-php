@@ -54,5 +54,13 @@
         "ADDRESS": "GAHANGA KIGALI",
         "DOCTOR_NAME": "Mwenyewe",
         "DOCTOR_ADDRESS": "GAHANGA KIGALI"
+    },
+    {
+        "ID": 5,
+        "NAME": "Murangwa",
+        "CONTACT_NUMBER": "0799986549",
+        "ADDRESS": "Miimimimimimi",
+        "DOCTOR_NAME": "Kundwa",
+        "DOCTOR_ADDRESS": "Ninininininii"
     }
 ]

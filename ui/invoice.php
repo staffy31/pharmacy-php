@@ -56,7 +56,6 @@
       ?>
       <!-- header section end -->
 
-
       <!-- form content -->
       <div class="row">
         <!-- customer details content -->
