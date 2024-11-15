@@ -1,11 +1,11 @@
 [
-  {
-    "ID": "1",
-    "NAME": " ACTION TAB ",
-    "BATCH_ID": "ACT327",
-    "EXPIRY_DATE": "12\/26",
-    "QUANTITY": "1",
-    "MRP": "2626",
-    "RATE": "26"
-  }
+    {
+        "ID": "1",
+        "NAME": " ACTION TAB ",
+        "BATCH_ID": "ACT327",
+        "EXPIRY_DATE": "12\/26",
+        "QUANTITY": 84,
+        "MRP": "2626",
+        "RATE": "26"
+    }
 ]

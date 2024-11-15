@@ -178,7 +178,7 @@ function createMedicineInfoRow()
 
 function getInvoiceNumber()
 {
-  $jsonFilePath = '../data/invoices.json';
+  $jsonFilePath = '../../data/invoices.json';
 
   if (file_exists($jsonFilePath)) {
     $jsonData = file_get_contents($jsonFilePath);
@@ -206,7 +206,7 @@ function getInvoiceNumber()
 
 function fill($name, $column)
 {
-  $jsonFilePath = '../data/medicines_stock.json';
+  $jsonFilePath = '../../data/medicines_stock.json';
 
   if (file_exists($jsonFilePath)) {
     $jsonData = file_get_contents($jsonFilePath);
@@ -243,7 +243,7 @@ function fill($name, $column)
 
 function checkAvailableQuantity($name)
 {
-  $jsonFilePath = '../data/medicines_stock.json';
+  $jsonFilePath = '../../data/medicines_stock.json';
 
   if (file_exists($jsonFilePath)) {
     $jsonData = file_get_contents($jsonFilePath);
@@ -280,7 +280,7 @@ function checkAvailableQuantity($name)
 
 function updateStock($name, $batch_id, $quantity)
 {
-  $jsonFilePath = '../data/medicines_stock.json';
+  $jsonFilePath = '../../data/medicines_stock.json';
 
   if (file_exists($jsonFilePath)) {
     $jsonData = file_get_contents($jsonFilePath);
@@ -323,7 +323,7 @@ function updateStock($name, $batch_id, $quantity)
 
 function showMedicineList($text)
 {
-  $jsonFilePath = '../data/medicines_stock.json';
+  $jsonFilePath = '../../data/medicines_stock.json';
 
   if (file_exists($jsonFilePath)) {
     $jsonData = file_get_contents($jsonFilePath);
@@ -354,12 +354,14 @@ function addNewInvoice()
   $total_amount = $_GET['total_amount'];
   $total_discount = $_GET['total_discount'];
   $net_total = $_GET['net_total'];
+  $customers_name = $_GET['customers_name'];
 
-  $jsonFilePath = '../data/invoices.json';
+  $jsonFilePath = '../../data/invoices.json';
 
   $newInvoice = [
     'ID' => 1,
     "CUSTOMER_ID" => $customer_id,
+    "NAME" => $customers_name,
     "INVOICE_DATE" => $invoice_date,
     "TOTAL_AMOUNT" => $total_amount,
     "TOTAL_DISCOUNT" => $total_discount,
@@ -404,7 +406,7 @@ function addSale()
   $discount = $_GET['discount'];
   $total = $_GET['total'];
 
-  $jsonFilePath = '../data/sales.json';
+  $jsonFilePath = '../../data/sales.json';
 
   $newSale = [
     'ID' => 1,
