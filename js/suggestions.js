@@ -1,14 +1,5 @@
 function showSuggestions(text, action) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if(xhttp.readyState = 4 && xhttp.status == 200)
-      document.getElementById(action + "_suggestions").innerHTML = xhttp.responseText;
-  };
-  xhttp.open("GET", "../ui/php/suggestions.php?action=" + action + "&text=" + text, true);
-  xhttp.send();
-}
-
-function showSuggestionsSupplier(text, action) {
+  // alert(action);
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState = 4 && xhttp.status == 200)
@@ -47,7 +38,7 @@ function getCustomerDetail(id, name) {
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState = 4 && xhttp.status == 200)
       document.getElementById(id).value = xhttp.responseText;
-    // alert(xhttp.responseText);
+    alert(xhttp.responseText);
   };
   xhttp.open("GET", "../ui/php/suggestions.php?action=" + id + "&name=" + name, true);
   xhttp.send();

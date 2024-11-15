@@ -1,44 +1,44 @@
 [
     {
-        "id": 1,
-        "name": "NKUNDA",
-        "email": "ADA@ADA.COM",
-        "contact_number": "0783186668",
-        "address": "GAHANGA KICUKIRO"
+        "ID": 1,
+        "NAME": "NKUNDA",
+        "EMAIL": "ADA@ADA.COM",
+        "CONTACT_NUMBER": "0783186668",
+        "ADDRESS": "GAHANGA KICUKIRO"
     },
     {
-        "id": 2,
-        "name": "NKUNDANA",
-        "email": "ADAM@ADA.COM",
-        "contact_number": "0783186668",
-        "address": "GAHANGA KICUKIRO"
+        "ID": 2,
+        "NAME": "NKUNDANA",
+        "EMAIL": "ADAM@ADA.COM",
+        "CONTACT_NUMBER": "0783186668",
+        "ADDRESS": "GAHANGA KICUKIRO"
     },
     {
-        "id": 3,
-        "name": "Moula",
-        "email": "mou@mou.com",
-        "contact_number": "0981176548",
-        "address": "GAHANGA Kigali"
+        "ID": 3,
+        "NAME": "Moula",
+        "EMAIL": "mou@mou.com",
+        "CONTACT_NUMBER": "0981176548",
+        "ADDRESS": "GAHANGA Kigali"
     },
     {
-        "id": 4,
-        "name": "Purchina",
-        "email": "purchina@do.com",
-        "contact_number": "0798865487",
-        "address": "GAHANGA KIGALI"
+        "ID": 4,
+        "NAME": "Purchina",
+        "EMAIL": "purchina@do.com",
+        "CONTACT_NUMBER": "0798865487",
+        "ADDRESS": "GAHANGA KIGALI"
     },
     {
-        "id": 5,
-        "name": "GAHANGA ",
-        "email": "purch",
-        "contact_number": "0771176547",
-        "address": "GAHANGA Nnnnn"
+        "ID": 5,
+        "NAME": "GAHANGA ",
+        "EMAIL": "purch",
+        "CONTACT_NUMBER": "0771176547",
+        "ADDRESS": "GAHANGA Nnnnn"
     },
     {
-        "id": 6,
-        "name": "Kiran Pharma",
-        "email": "kiran@kiran.com",
-        "contact_number": "0799665512",
-        "address": "GAHANGA Kgl"
+        "ID": 6,
+        "NAME": "Kiran Pharma",
+        "EMAIL": "kiran@kiran.com",
+        "CONTACT_NUMBER": "0799665512",
+        "ADDRESS": "GAHANGA Kgl"
     }
 ]

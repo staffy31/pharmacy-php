@@ -30,11 +30,11 @@ if ($supplierExists) {
 } else {
     // Append the new supplier data
     $newSupplier = [
-        "id" => $nextId,
-        "name" => $name,
-        "email" => $email,
-        "contact_number" => $contact_number,
-        "address" => $address
+        "ID" => $nextId,
+        "NAME" => $name,
+        "EMAIL" => $email,
+        "CONTACT_NUMBER" => $contact_number,
+        "ADDRESS" => $address
     ];
     $data[] = $newSupplier;
 

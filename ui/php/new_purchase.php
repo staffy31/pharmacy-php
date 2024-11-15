@@ -34,7 +34,7 @@ function saveJsonFile($filename, $data)
 
 function isSupplier($name)
 {
-  $suppliers = loadJsonFile('../data/suppliers.json');
+  $suppliers = loadJsonFile('../../data/suppliers.json');
   foreach ($suppliers as $supplier) {
     if (strtoupper($supplier['NAME']) === $name) {
       echo "true";
@@ -46,7 +46,7 @@ function isSupplier($name)
 
 function isInvoiceExist($invoice_number)
 {
-  $purchases = loadJsonFile('../data/purchases.json');
+  $purchases = loadJsonFile('../../data/purchases.json');
   foreach ($purchases as $purchase) {
     if ($purchase['INVOICE_NUMBER'] == $invoice_number) {
       echo "true";
@@ -58,7 +58,7 @@ function isInvoiceExist($invoice_number)
 
 function isNewMedicine($name, $packing)
 {
-  $medicines = loadJsonFile('../data/medicines.json');
+  $medicines = loadJsonFile('../../data/medicines.json');
   foreach ($medicines as $medicine) {
     if (strtoupper($medicine['NAME']) === $name && strtoupper($medicine['PACKING']) === $packing) {
       echo "false";
@@ -71,7 +71,7 @@ function isNewMedicine($name, $packing)
 
 function addStock()
 {
-  $medicinesStock = loadJsonFile('../data/medicines_stock.json');
+  $medicinesStock = loadJsonFile('../../data/medicines_stock.json');
   $name = ucwords($_GET['name']);
   $batch_id = strtoupper($_GET['batch_id']);
   $expiry_date = $_GET['expiry_date'];
@@ -102,13 +102,13 @@ function addStock()
     ];
   }
 
-  saveJsonFile('../data/medicines_stock.json', $medicinesStock);
+  saveJsonFile('../../data/medicines_stock.json', $medicinesStock);
   echo $found ? "Stock updated" : "New stock added";
 }
 
 function addNewPurchase()
 {
-  $purchases = loadJsonFile('../data/purchases.json');
+  $purchases = loadJsonFile('../../data/purchases.json');
   $suppliers_name = ucwords($_GET['suppliers_name']);
   $invoice_number = $_GET['invoice_number'];
   $payment_type = $_GET['payment_type'];
@@ -126,7 +126,7 @@ function addNewPurchase()
   ];
 
   $purchases[] = $newPurchase;
-  saveJsonFile('../data/purchases.json', $purchases);
+  saveJsonFile('../../data/purchases.json', $purchases);
 
   echo "Purchase saved...";
 }

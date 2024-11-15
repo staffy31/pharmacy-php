@@ -110,11 +110,12 @@ function getAmount(row_number) {
 }
 
 function addPurchase() {
-  var suppliers_name = document.getElementById('suppliers_name');
+  // var suppliers_name = document.getElementById('suppliers_name');
+  var suppliers_name = "NKUNDA";
   var invoice_number = document.getElementById('invoice_number');
   var payment_type = document.getElementById('payment_type');
   var invoice_date = document.getElementById('invoice_date');
-
+  // alert(suppliers_name);
   if(!notNull(suppliers_name.value, "supplier_name_error"))
     suppliers_name.focus();
   else if(isSupplier(suppliers_name.value) == "false") {
@@ -137,7 +138,7 @@ function addPurchase() {
 
     var medicineStockRow = new Array(row_count-1);
     var newMedicine = new Array(row_count-1);
-    //alert(newMedicine[0] == null);
+    // alert(newMedicine[0] == null);
 
     for(var i = 1; i < row_count; i++) {
       var elements_count = medicine_info[i].childElementCount;
@@ -257,6 +258,7 @@ function addNewPurchase(suppliers_name, invoice_number, payment_type, invoice_da
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState = 4 && xhttp.status == 200)
       document.getElementById('purchase_acknowledgement').innerHTML = xhttp.responseText;
+    // alert(xhttp.responseText);
   };
   xhttp.open("GET", "../ui/php/new_purchase.php?action=add_new_purchase&suppliers_name=" + suppliers_name + "&invoice_number=" + invoice_number + "&payment_type=" + payment_type + "&invoice_date=" + invoice_date + "&invoice_date=" + invoice_date + "&grand_total=" + grand_total, true);
   xhttp.send();
