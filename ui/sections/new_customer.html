@@ -3,8 +3,9 @@
   <div class="col col-md-4">
     <label class="font-weight-bold" for="customer_name">Customer Name :</label>
   </div>
-  <div class="col col-md-7 m-2">  
-    <input type="text" class="form-control" placeholder="Name" id="customer_name" onkeyup="validateName(this.value, 'name_error');">
+  <div class="col col-md-7 m-2">
+    <input type="text" class="form-control" placeholder="Name" id="customer_name"
+           onkeyup="validateName(this.value, 'name_error');">
     <code class="text-danger small font-weight-bold float-right" id="name_error" style="display: none;"></code>
   </div>
 </div>
@@ -14,30 +15,34 @@
   <div class="col col-md-4">
     <label class="font-weight-bold" for="customer_contact_number">Contact Number :</label>
   </div>
-  <div class="col col-md-7 m-2">  
-    <input type="number" class="form-control" placeholder="Contact Number" id="customer_contact_number" onblur="validateContactNumber(this.value, 'contact_number_error');">
-    <code class="text-danger small font-weight-bold float-right" id="contact_number_error" style="display: none;"></code>
+  <div class="col col-md-7 m-2">
+    <input type="number" class="form-control" placeholder="Contact Number" id="customer_contact_number"
+           onblur="validateContactNumber(this.value, 'contact_number_error');">
+    <code class="text-danger small font-weight-bold float-right" id="contact_number_error"
+          style="display: none;"></code>
   </div>
 </div>
 
 <!-- customer address control -->
 <div class="row col col-md-12 d-flex">
-  <div class="col col-md-4"> 
+  <div class="col col-md-4">
     <label class="font-weight-bold" for="customer_address">Address :</label>
   </div>
-  <div class="col col-md-7 m-2">   
-    <textarea class="form-control" placeholder="Address" id="customer_address" onblur="validateAddress(this.value, 'address_error');"></textarea>
+  <div class="col col-md-7 m-2">
+    <textarea class="form-control" placeholder="Address" id="customer_address"
+              onblur="validateAddress(this.value, 'address_error');"></textarea>
     <code class="text-danger small font-weight-bold float-right" id="address_error" style="display: none;"></code>
   </div>
 </div>
 
-<!-- customes's doctor name -->  
+<!-- customes's doctor name -->
 <div class="row col col-md-12 d-flex">
   <div class="col col-md-4">
     <label class="font-weight-bold" for="customer_doctors_name">Doctor's Name :</label>
   </div>
-  <div class="col col-md-7 m-2">  
-    <input type="text" class="form-control" placeholder="Doctor's Name" id="customer_doctors_name" onkeyup="validateName(this.value, 'doctor_name_error');">
+  <div class="col col-md-7 m-2">
+    <input type="text" class="form-control" placeholder="Doctor's Name" id="customer_doctors_name"
+           onkeyup="validateName(this.value, 'doctor_name_error');">
     <code class="text-danger small font-weight-bold float-right" id="doctor_name_error" style="display: none;"></code>
   </div>
 </div>
@@ -47,9 +52,11 @@
   <div class="col col-md-4">
     <label class="font-weight-bold" for="customer_doctors_address">Doctor's Address :</label>
   </div>
-  <div class="col col-md-7 m-2">  
-    <textarea class="form-control" placeholder="Doctor's Address" id="customer_doctors_address" onblur="validateAddress(this.value, 'doctor_address_error');"></textarea>
-    <code class="text-danger small font-weight-bold float-right" id="doctor_address_error" style="display: none;"></code>
+  <div class="col col-md-7 m-2">
+    <textarea class="form-control" placeholder="Doctor's Address" id="customer_doctors_address"
+              onblur="validateAddress(this.value, 'doctor_address_error');"></textarea>
+    <code class="text-danger small font-weight-bold float-right" id="doctor_address_error"
+          style="display: none;"></code>
   </div>
 </div>
 <!-- customer details content end -->
@@ -67,4 +74,5 @@
   </div>
 </div>
 <!-- result message -->
-<div id="customer_acknowledgement" class="col-md-12 h5 text-success font-weight-bold text-center" style="font-family: sans-serif;"></div>
+<div id="customer_acknowledgement" class="col-md-12 h5 text-success font-weight-bold text-center"
+     style="font-family: sans-serif;"></div>

@@ -1,66 +1,66 @@
 [
-    {
-        "ID": 8,
-        "NAME": "Moula",
-        "CONTACT_NUMBER": "0789986548",
-        "ADDRESS": "GAHANGA Kigali Rwanda",
-        "DOCTOR_NAME": "Muhima",
-        "DOCTOR_ADDRESS": "GAHANGA Kigali Rwanda"
-    },
-    {
-        "ID": 7,
-        "NAME": "NKUBITO",
-        "CONTACT_NUMBER": "0781286568",
-        "ADDRESS": "GAHANGA Kigali",
-        "DOCTOR_NAME": "Yamoula",
-        "DOCTOR_ADDRESS": "GAHANGA Kigali"
-    },
-    {
-        "ID": 6,
-        "NAME": "Tito",
-        "CONTACT_NUMBER": "0781386568",
-        "ADDRESS": "GAHANGA Kigali",
-        "DOCTOR_NAME": "Yamoula",
-        "DOCTOR_ADDRESS": "GAHANGA Kigali"
-    },
-    {
-        "ID": 1,
-        "NAME": "NKUSI",
-        "CONTACT_NUMBER": "0781486568",
-        "ADDRESS": "GAHANGA Kigali",
-        "DOCTOR_NAME": "Yamoula",
-        "DOCTOR_ADDRESS": "GAHANGA Kigali"
-    },
-    {
-        "ID": 2,
-        "NAME": "NKUBANA",
-        "CONTACT_NUMBER": "0782486568",
-        "ADDRESS": "GAHANGA Kigali",
-        "DOCTOR_NAME": "Yamoula",
-        "DOCTOR_ADDRESS": "GAHANGA Kigali"
-    },
-    {
-        "ID": 3,
-        "NAME": "NKURI",
-        "CONTACT_NUMBER": "0784186568",
-        "ADDRESS": "GAHANGA KICUKIRO",
-        "DOCTOR_NAME": "THOM",
-        "DOCTOR_ADDRESS": "GAHANGA KICUKIRO"
-    },
-    {
-        "ID": 4,
-        "NAME": "Ntaganda",
-        "CONTACT_NUMBER": "0791196549",
-        "ADDRESS": "GAHANGA KIGALI",
-        "DOCTOR_NAME": "Mwenyewe",
-        "DOCTOR_ADDRESS": "GAHANGA KIGALI"
-    },
-    {
-        "ID": 5,
-        "NAME": "Murangwa",
-        "CONTACT_NUMBER": "0799986549",
-        "ADDRESS": "Miimimimimimi",
-        "DOCTOR_NAME": "Kundwa",
-        "DOCTOR_ADDRESS": "Ninininininii"
-    }
+  {
+    "ID": 8,
+    "NAME": "Moula",
+    "CONTACT_NUMBER": "0789986548",
+    "ADDRESS": "GAHANGA Kigali Rwanda",
+    "DOCTOR_NAME": "Muhima",
+    "DOCTOR_ADDRESS": "GAHANGA Kigali Rwanda"
+  },
+  {
+    "ID": 7,
+    "NAME": "NKUBITO",
+    "CONTACT_NUMBER": "0781286568",
+    "ADDRESS": "GAHANGA Kigali",
+    "DOCTOR_NAME": "Yamoula",
+    "DOCTOR_ADDRESS": "GAHANGA Kigali"
+  },
+  {
+    "ID": 6,
+    "NAME": "Tito",
+    "CONTACT_NUMBER": "0781386568",
+    "ADDRESS": "GAHANGA Kigali",
+    "DOCTOR_NAME": "Yamoula",
+    "DOCTOR_ADDRESS": "GAHANGA Kigali"
+  },
+  {
+    "ID": 1,
+    "NAME": "NKUSI",
+    "CONTACT_NUMBER": "0781486568",
+    "ADDRESS": "GAHANGA Kigali",
+    "DOCTOR_NAME": "Yamoula",
+    "DOCTOR_ADDRESS": "GAHANGA Kigali"
+  },
+  {
+    "ID": 2,
+    "NAME": "NKUBANA",
+    "CONTACT_NUMBER": "0782486568",
+    "ADDRESS": "GAHANGA Kigali",
+    "DOCTOR_NAME": "Yamoula",
+    "DOCTOR_ADDRESS": "GAHANGA Kigali"
+  },
+  {
+    "ID": 3,
+    "NAME": "NKURI",
+    "CONTACT_NUMBER": "0784186568",
+    "ADDRESS": "GAHANGA KICUKIRO",
+    "DOCTOR_NAME": "THOM",
+    "DOCTOR_ADDRESS": "GAHANGA KICUKIRO"
+  },
+  {
+    "ID": 4,
+    "NAME": "Ntaganda",
+    "CONTACT_NUMBER": "0791196549",
+    "ADDRESS": "GAHANGA KIGALI",
+    "DOCTOR_NAME": "Mwenyewe",
+    "DOCTOR_ADDRESS": "GAHANGA KIGALI"
+  },
+  {
+    "ID": 5,
+    "NAME": "Murangwa",
+    "CONTACT_NUMBER": "0799986549",
+    "ADDRESS": "Miimimimimimi",
+    "DOCTOR_NAME": "Kundwa",
+    "DOCTOR_ADDRESS": "Ninininininii"
+  }
 ]

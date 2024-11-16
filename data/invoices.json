@@ -1,20 +1,20 @@
 [
-    {
-        "ID": 1,
-        "CUSTOMER_ID": 0,
-        "NAME": "NKUBANA",
-        "INVOICE_DATE": "2024-11-15",
-        "TOTAL_AMOUNT": "5252",
-        "TOTAL_DISCOUNT": "0",
-        "NET_TOTAL": "5252"
-    },
-    {
-        "ID": 1,
-        "CUSTOMER_ID": 0,
-        "NAME": "Murangwa",
-        "INVOICE_DATE": "2024-11-15",
-        "TOTAL_AMOUNT": "5252",
-        "TOTAL_DISCOUNT": "0",
-        "NET_TOTAL": "5252"
-    }
+  {
+    "ID": 1,
+    "CUSTOMER_ID": 0,
+    "NAME": "NKUBANA",
+    "INVOICE_DATE": "2024-11-15",
+    "TOTAL_AMOUNT": "5252",
+    "TOTAL_DISCOUNT": "0",
+    "NET_TOTAL": "5252"
+  },
+  {
+    "ID": 1,
+    "CUSTOMER_ID": 0,
+    "NAME": "Murangwa",
+    "INVOICE_DATE": "2024-11-15",
+    "TOTAL_AMOUNT": "5252",
+    "TOTAL_DISCOUNT": "0",
+    "NET_TOTAL": "5252"
+  }
 ]
