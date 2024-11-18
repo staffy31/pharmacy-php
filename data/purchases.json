@@ -16,5 +16,14 @@
         "PURCHASE_DATE": "2024-11-18",
         "TOTAL_AMOUNT": "300",
         "PAYMENT_STATUS": "PAID"
+    },
+    {
+        "ID": 1,
+        "SUPPLIER_NAME": "Moula",
+        "VOUCHER_NUMBER": "1",
+        "INVOICE_NUMBER": "4",
+        "PURCHASE_DATE": "2024-11-16",
+        "TOTAL_AMOUNT": "105",
+        "PAYMENT_STATUS": "DUE"
     }
 ]

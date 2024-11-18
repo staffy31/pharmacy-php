@@ -33,5 +33,12 @@
         "PACKING": "TAB",
         "GENERIC_NAME": "Croisin",
         "SUPPLIER_NAME": "Moula"
+    },
+    {
+        "ID": 6,
+        "NAME": "PARACETAMOL 500MG",
+        "PACKING": "TAB",
+        "GENERIC_NAME": "Paracet 500mg",
+        "SUPPLIER_NAME": "Moula"
     }
 ]
