@@ -1,11 +1,31 @@
 [
-  {
-    "ID": "1",
-    "NAME": " ACTION TAB ",
-    "BATCH_ID": "ACT327",
-    "EXPIRY_DATE": "12\/26",
-    "QUANTITY": 84,
-    "MRP": "2626",
-    "RATE": "26"
-  }
+    {
+        "ID": "1",
+        "NAME": " ACTION TAB ",
+        "BATCH_ID": "ACT327",
+        "EXPIRY_DATE": "12\/26",
+        "QUANTITY": 84,
+        "MRP": "2626",
+        "RATE": "26"
+    },
+    {
+        "ID": 1,
+        "NAME": "Famotidine 10 Mg, Magnesium Hydroxide 165 Mg, Calcium Carbonate 800 Mg, GASTRICID Tablet   ",
+        "BATCH_ID": "FAM",
+        "EXPIRY_DATE": "01\/26",
+        "QUANTITY": "15",
+        "MRP": "4",
+        "RATE": "2",
+        "INVOICE_NUMBER": "2"
+    },
+    {
+        "ID": 1,
+        "NAME": "Crosin",
+        "BATCH_ID": "C1233",
+        "EXPIRY_DATE": "01\/26",
+        "QUANTITY": "15",
+        "MRP": "45",
+        "RATE": "20",
+        "INVOICE_NUMBER": "3"
+    }
 ]

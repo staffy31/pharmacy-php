@@ -119,6 +119,7 @@ function addNewPurchase()
   $newPurchase = [
     'ID' => 1,
     'SUPPLIER_NAME' => $suppliers_name,
+    'VOUCHER_NUMBER' => "1",
     'INVOICE_NUMBER' => $invoice_number,
     'PURCHASE_DATE' => $invoice_date,
     'TOTAL_AMOUNT' => $grand_total,

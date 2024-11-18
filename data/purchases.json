@@ -1,10 +1,20 @@
 [
-  {
-    "NAME": "NKUNDANA",
-    "INVOICE_NUMBER": "1",
-    "VOUCHER_NUMBER": "1",
-    "PURCHASE_DATE": "2024-11-04",
-    "TOTAL_AMOUNT": "24",
-    "PAYMENT_STATUS": "PAID"
-  }
+    {
+        "ID": 1,
+        "SUPPLIER_NAME": "NKUNDANA",
+        "VOUCHER_NUMBER": "1",
+        "INVOICE_NUMBER": "2",
+        "PURCHASE_DATE": "2024-11-18",
+        "TOTAL_AMOUNT": "30",
+        "PAYMENT_STATUS": "PAID"
+    },
+    {
+        "ID": 1,
+        "SUPPLIER_NAME": "Moula",
+        "VOUCHER_NUMBER": "1",
+        "INVOICE_NUMBER": "3",
+        "PURCHASE_DATE": "2024-11-18",
+        "TOTAL_AMOUNT": "300",
+        "PAYMENT_STATUS": "PAID"
+    }
 ]

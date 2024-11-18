@@ -1,23 +1,37 @@
 [
-  {
-    "ID": 1,
-    "NAME": "ALCET TAB 5MG",
-    "PACKING": "TAB",
-    "GENERIC_NAME": "Alcet",
-    "SUPPLIER_NAME": "m"
-  },
-  {
-    "ID": 2,
-    "NAME": " ACTION TAB ",
-    "PACKING": "TAB",
-    "GENERIC_NAME": "Action",
-    "SUPPLIER_NAME": "NKUNDA"
-  },
-  {
-    "ID": 3,
-    "NAME": " ACTION TAB 2",
-    "PACKING": "TAB",
-    "GENERIC_NAME": "Action Tab",
-    "SUPPLIER_NAME": "Moula"
-  }
+    {
+        "ID": 1,
+        "NAME": "ALCET TAB 5MG",
+        "PACKING": "TAB",
+        "GENERIC_NAME": "Alcet",
+        "SUPPLIER_NAME": "m"
+    },
+    {
+        "ID": 2,
+        "NAME": " ACTION TAB ",
+        "PACKING": "TAB",
+        "GENERIC_NAME": "Action",
+        "SUPPLIER_NAME": "NKUNDA"
+    },
+    {
+        "ID": 3,
+        "NAME": " ACTION TAB 2",
+        "PACKING": "TAB",
+        "GENERIC_NAME": "Action Tab",
+        "SUPPLIER_NAME": "Moula"
+    },
+    {
+        "ID": 4,
+        "NAME": "Famotidine 10 Mg, Magnesium Hydroxide 165 Mg, Calcium Carbonate 800 Mg, GASTRICID Tablet   ",
+        "PACKING": "TAB",
+        "GENERIC_NAME": "Famotidine",
+        "SUPPLIER_NAME": "NKUNDANA"
+    },
+    {
+        "ID": 5,
+        "NAME": "Crosin",
+        "PACKING": "TAB",
+        "GENERIC_NAME": "Croisin",
+        "SUPPLIER_NAME": "Moula"
+    }
 ]
