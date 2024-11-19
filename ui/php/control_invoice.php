@@ -6,7 +6,7 @@ if (isset($_GET["action"]) && $_GET["action"] == "search")
   searchInvoice(strtoupper($_GET["text"]), $_GET["tag"]);
 
 if (isset($_GET["action"]) && $_GET["action"] == "print_invoice")
-  printInvoice($_GET["invoice_number"]);
+  printInvoice($_GET["invoice_number"], $_GET["date"]);
 
 
 function showInvoices()
@@ -36,17 +36,17 @@ function showInvoiceRow($seq_no, $row)
 ?>
   <tr>
     <td><?php echo $seq_no; ?></td>
-    <td><?php echo $row['INVOICE_ID']; ?></td>
+    <td><?php echo $row['ID']; ?></td>
     <td><?php echo $row['NAME']; ?></td>
     <td><?php echo $row['INVOICE_DATE']; ?></td>
     <td><?php echo $row['TOTAL_AMOUNT']; ?></td>
     <td><?php echo $row['TOTAL_DISCOUNT']; ?></td>
     <td><?php echo $row['NET_TOTAL']; ?></td>
     <td>
-      <button class="btn btn-warning btn-sm" onclick="printInvoice(<?= $row['INVOICE_ID']; ?>,<?= $row['INVOICE_DATE']; ?>);">
+      <button class="btn btn-warning btn-sm" onclick="printInvoice(<?= $row['ID']; ?>,<?= $row['INVOICE_DATE']; ?>);">
         <i class="fa fa-fax"></i>
       </button>
-      <button class="btn btn-danger btn-sm" onclick="deleteInvoice(<?= $row['INVOICE_ID']; ?>);">
+      <button class="btn btn-danger btn-sm" onclick="deleteInvoice(<?= $row['ID']; ?>);">
         <i class="fa fa-trash"></i>
       </button>
     </td>
@@ -67,7 +67,7 @@ function searchInvoice($text, $column)
       $filtered_invoices = [];
 
       foreach ($invoices as $row) {
-        if ($column == 'INVOICE_ID' && strpos((string)$row['INVOICE_ID'], $text) !== false) {
+        if ($column == 'ID' && strpos((string)$row['ID'], $text) !== false) {
           $filtered_invoices[] = $row;
         } elseif ($column == 'INVOICE_DATE' && $row['INVOICE_DATE'] == $text) {
           $filtered_invoices[] = $row;

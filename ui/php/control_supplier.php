@@ -43,7 +43,7 @@ function showSuppliers($data, $id)
   $seq_no = 0;
   foreach ($data as $supplier) {
     $seq_no++;
-    if ($supplier['id'] == $id) {
+    if ($supplier['ID'] == $id) {
       showEditOptionsRow($seq_no, $supplier);
     } else {
       showSupplierRow($seq_no, $supplier);
@@ -56,16 +56,16 @@ function showSupplierRow($seq_no, $supplier)
 ?>
   <tr>
     <td><?php echo $seq_no; ?></td>
-    <td><?php echo $supplier['id']; ?></td>
-    <td><?php echo $supplier['name']; ?></td>
-    <td><?php echo $supplier['email']; ?></td>
-    <td><?php echo $supplier['contact_number']; ?></td>
-    <td><?php echo $supplier['address']; ?></td>
+    <td><?php echo $supplier['ID']; ?></td>
+    <td><?php echo $supplier['NAME']; ?></td>
+    <td><?php echo $supplier['EMAIL']; ?></td>
+    <td><?php echo $supplier['CONTACT_NUMBER']; ?></td>
+    <td><?php echo $supplier['ADDRESS']; ?></td>
     <td>
-      <button class="btn btn-info btn-sm" onclick="editSupplier(<?php echo $supplier['id']; ?>);">
+      <button class="btn btn-info btn-sm" onclick="editSupplier(<?php echo $supplier['ID']; ?>);">
         <i class="fa fa-pencil"></i>
       </button>
-      <button class="btn btn-danger btn-sm" onclick="deleteSupplier(<?php echo $supplier['id']; ?>);">
+      <button class="btn btn-danger btn-sm" onclick="deleteSupplier(<?php echo $supplier['ID']; ?>);">
         <i class="fa fa-trash"></i>
       </button>
     </td>
@@ -78,21 +78,21 @@ function showEditOptionsRow($seq_no, $supplier)
 ?>
   <tr>
     <td><?php echo $seq_no; ?></td>
-    <td><?php echo $supplier['id']; ?></td>
+    <td><?php echo $supplier['ID']; ?></td>
     <td>
-      <input type="text" class="form-control" value="<?php echo $supplier['name']; ?>" placeholder="Name" id="supplier_name">
+      <input type="text" class="form-control" value="<?php echo $supplier['NAME']; ?>" placeholder="Name" id="supplier_name">
     </td>
     <td>
-      <input type="email" class="form-control" value="<?php echo $supplier['email']; ?>" placeholder="Email" id="supplier_email">
+      <input type="email" class="form-control" value="<?php echo $supplier['EMAIL']; ?>" placeholder="Email" id="supplier_email">
     </td>
     <td>
-      <input type="number" class="form-control" value="<?php echo $supplier['contact_number']; ?>" placeholder="Contact Number" id="supplier_contact_number">
+      <input type="number" class="form-control" value="<?php echo $supplier['CONTACT_NUMBER']; ?>" placeholder="Contact Number" id="supplier_contact_number">
     </td>
     <td>
-      <textarea class="form-control" placeholder="Address" id="supplier_address"><?php echo $supplier['address']; ?></textarea>
+      <textarea class="form-control" placeholder="Address" id="supplier_address"><?php echo $supplier['ADDRESS']; ?></textarea>
     </td>
     <td>
-      <button class="btn btn-success btn-sm" onclick="updateSupplier(<?php echo $supplier['id']; ?>);">
+      <button class="btn btn-success btn-sm" onclick="updateSupplier(<?php echo $supplier['ID']; ?>);">
         <i class="fa fa-edit"></i>
       </button>
       <button class="btn btn-danger btn-sm" onclick="cancel();">
@@ -106,11 +106,11 @@ function showEditOptionsRow($seq_no, $supplier)
 function updateSupplier($id, $name, $email, $contact_number, $address, &$data)
 {
   foreach ($data as &$supplier) {
-    if ($supplier['id'] == $id) {
-      $supplier['name'] = $name;
-      $supplier['email'] = $email;
-      $supplier['contact_number'] = $contact_number;
-      $supplier['address'] = $address;
+    if ($supplier['ID'] == $id) {
+      $supplier['NAME'] = $name;
+      $supplier['EMAIL'] = $email;
+      $supplier['CONTACT_NUMBER'] = $contact_number;
+      $supplier['ADDRESS'] = $address;
       break;
     }
   }
@@ -121,7 +121,7 @@ function updateSupplier($id, $name, $email, $contact_number, $address, &$data)
 function deleteSupplier($id, &$data)
 {
   $data = array_filter($data, function ($supplier) use ($id) {
-    return $supplier['id'] != $id;
+    return $supplier['ID'] != $id;
   });
   saveData(array_values($data));  // Re-index array after deletion
   showSuppliers($data, 0);
@@ -131,7 +131,7 @@ function searchSupplier($text, $data)
 {
   $seq_no = 0;
   foreach ($data as $supplier) {
-    if (strpos(strtoupper($supplier['name']), $text) !== false) {
+    if (strpos(strtoupper($supplier['NAME']), $text) !== false) {
       $seq_no++;
       showSupplierRow($seq_no, $supplier);
     }
