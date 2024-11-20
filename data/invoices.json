@@ -1,7 +1,7 @@
 [
   {
     "ID": 1,
-    "CUSTOMER_ID": 0,
+    "CUSTOMER_ID": 1,
     "NAME": "NKUBANA",
     "INVOICE_DATE": "2024-11-15",
     "TOTAL_AMOUNT": "5252",
@@ -10,7 +10,7 @@
   },
   {
     "ID": 1,
-    "CUSTOMER_ID": 0,
+    "CUSTOMER_ID": 1,
     "NAME": "Murangwa",
     "INVOICE_DATE": "2024-11-15",
     "TOTAL_AMOUNT": "5252",
