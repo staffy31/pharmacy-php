@@ -6,7 +6,7 @@ if (isset($_GET["action"]) && $_GET["action"] == "search")
   searchInvoice(strtoupper($_GET["text"]), $_GET["tag"]);
 
 if (isset($_GET["action"]) && $_GET["action"] == "print_invoice")
-  printInvoice($_GET["invoice_number"], $_GET["date"]);
+  printInvoice($_GET["invoice_number"]);
 
 
 function showInvoices()
@@ -43,7 +43,7 @@ function showInvoiceRow($seq_no, $row)
     <td><?php echo $row['TOTAL_DISCOUNT']; ?></td>
     <td><?php echo $row['NET_TOTAL']; ?></td>
     <td>
-      <button class="btn btn-warning btn-sm" onclick="printInvoice(<?= $row['ID']; ?>,<?= $row['INVOICE_DATE']; ?>);">
+      <button class="btn btn-warning btn-sm" onclick="printInvoice(<?= $row['ID']; ?>);">
         <i class="fa fa-fax"></i>
       </button>
       <button class="btn btn-danger btn-sm" onclick="deleteInvoice(<?= $row['ID']; ?>);">
@@ -87,12 +87,12 @@ function searchInvoice($text, $column)
     echo "JSON file not found.";
   }
 }
-function printInvoice($invoice_number,$invoice_date)
+function printInvoice($invoice_number)
 {
 
-  $file_customers = '../data/customers.json';
-  $file_sales = '../data/sales.json';
-  $file_invoices = '../data/invoices.json';
+  $file_customers = '../../data/customers.json';
+  $file_sales = '../../data/sales.json';
+  $file_invoices = '../../data/invoices.json';
 
   if (file_exists($file_customers) && file_exists($file_sales)) {
     $customers_data = json_decode(file_get_contents($file_customers), true);
@@ -121,8 +121,8 @@ function printInvoice($invoice_number,$invoice_date)
           $customer_name = $customer_record['NAME'];
           $address = $customer_record['ADDRESS'];
           $contact_number = $customer_record['CONTACT_NUMBER'];
-          $doctor_name = $sale_record['DOCTOR_NAME'];
-          $doctor_address = $sale_record['DOCTOR_ADDRESS'];
+          $doctor_name = $customer_record['DOCTOR_NAME'];
+          $doctor_address = $customer_record['DOCTOR_ADDRESS'];
         } else {
           echo "Customer not found for the provided CUSTOMER_ID.";
         }
@@ -136,7 +136,6 @@ function printInvoice($invoice_number,$invoice_date)
     echo "One or both JSON files are missing.";
   }
 
-
   if (file_exists($file_invoices)) {
     $invoices_data = json_decode(file_get_contents($file_invoices), true);
 
@@ -144,7 +143,7 @@ function printInvoice($invoice_number,$invoice_date)
       $invoice_record = null;
 
       foreach ($invoices_data as $invoice) {
-        if ($invoice['INVOICE_NUMBER'] == $invoice_number) {
+        if ($invoice['ID'] == $invoice_number) {
           $invoice_record = $invoice;
           break;
         }
@@ -194,7 +193,7 @@ function printInvoice($invoice_number,$invoice_date)
 
     <?php
 
-    $file_admin = '../data/admin_credentials.json';
+    $file_admin = '../../data/admin_credentials.json';
 
     if (file_exists($file_admin)) {
       $admin_data = json_decode(file_get_contents($file_admin), true);
@@ -214,10 +213,10 @@ function printInvoice($invoice_number,$invoice_date)
 
     <div class="col-md-4">
       <span class="h4">Shop Details : </span><br><br>
-      <span class="font-weight-bold"><?php echo $p_name; ?></span><br>
-      <span class="font-weight-bold"><?php echo $p_address; ?></span><br>
-      <span class="font-weight-bold"><?php echo $p_email; ?></span><br>
-      <span class="font-weight-bold">Mob. No.: <?php echo $p_contact_number; ?></span>
+      <span class="font-weight-bold"><?php echo '';//$p_name; ?></span><br>
+      <span class="font-weight-bold"><?php echo '';//$p_address; ?></span><br>
+      <span class="font-weight-bold"><?php echo '';//$p_email; ?></span><br>
+      <span class="font-weight-bold">Mob. No.: <?php echo '';//$p_contact_number; ?></span>
     </div>
     <div class="col-md-1"></div>
   </div>
@@ -242,7 +241,7 @@ function printInvoice($invoice_number,$invoice_date)
         </thead>
         <tbody>
           <?php
-          $file_sales = '../data/sales.json';
+          $file_sales = '../../data/sales.json';
           $seq_no = 0;
           $total = 0;
           if (file_exists($file_sales)) {
@@ -258,12 +257,12 @@ function printInvoice($invoice_number,$invoice_date)
               }
 
               foreach ($matched_sales as $row) {
-                $item_name = $row['ITEM_NAME'];
-                $quantity = $row['QUANTITY'];
-                $price = $row['PRICE'];
-                $total = $row['TOTAL'];
+                // $item_name = $row['ITEM_NAME'];
+                // $quantity = $row['QUANTITY'];
+                // $price = $row['PRICE'];
+                // $total = $row['TOTAL'];
                 $seq_no++;
-          ?>
+                ?>
                 <tr>
                   <td><?php echo $seq_no; ?></td>
                   <td><?php echo $row['MEDICINE_NAME']; ?></td>
@@ -273,7 +272,7 @@ function printInvoice($invoice_number,$invoice_date)
                   <td><?php echo $row['DISCOUNT'] . "%"; ?></td>
                   <td><?php echo $row['TOTAL']; ?></td>
                 </tr>
-          <?php
+                <?php
               }
 
               if (empty($matched_sales)) {

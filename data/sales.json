@@ -1,0 +1,14 @@
+[
+    {
+        "ID": 1,
+        "CUSTOMER_ID": 1,
+        "INVOICE_NUMBER": "1",
+        "MEDICINE_NAME": "PARACETAMOL 500MG",
+        "BATCH_ID": "PAR32",
+        "EXPIRY_DATE": "01\/26",
+        "QUANTITY": "2",
+        "MRP": "13",
+        "DISCOUNT": "0",
+        "TOTAL": "26"
+    }
+]

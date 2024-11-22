@@ -32,6 +32,7 @@ function searchInvoice(text, tag) {
 }
 
 function printInvoice(invoice_number) {
+  alert(invoice_number);
   var print_content;
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {

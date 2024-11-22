@@ -40,5 +40,12 @@
         "PACKING": "TAB",
         "GENERIC_NAME": "Paracet 500mg",
         "SUPPLIER_NAME": "Moula"
+    },
+    {
+        "ID": 7,
+        "NAME": "PARACETAMOL 120MG",
+        "PACKING": "TAB",
+        "GENERIC_NAME": "Paracet 120mg",
+        "SUPPLIER_NAME": "NKUNDANA"
     }
 ]
