@@ -13,8 +13,7 @@
   <link href="../dist/css/icons/themify-icons/themify-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/sidenav.css">
   <link rel="stylesheet" href="../css/home.css">
-  <script type="text/javascript" src="../js/suggestions.js"></script>
-  <script type="text/javascript" src="../js/new_purchase.js"></script>
+  <script type="text/javascript" src="../js/report.js"></script>
   <script src="../js/validateForm.js"></script>
 
   <style>
@@ -59,7 +58,7 @@
         </div>
 
         <div class="col col-md-12 table-responsive">
-          <div id="print_content" class="table-responsive">
+          <div id="print_content" class="table-responsive bg-white">
             <table class="table table-bordered table-striped table-hover" id="purchase_report_div">
               <?php
               require "php/report.php";

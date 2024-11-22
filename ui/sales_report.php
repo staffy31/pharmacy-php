@@ -13,8 +13,7 @@
   <link href="../dist/css/icons/themify-icons/themify-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/sidenav.css">
   <link rel="stylesheet" href="../css/home.css">
-  <script type="text/javascript" src="../js/suggestions.js"></script>
-  <script type="text/javascript" src="../js/new_purchase.js"></script>
+  <script type="text/javascript" src="../js/report.js"></script>
   <script src="../js/validateForm.js"></script>
 
   <style>
