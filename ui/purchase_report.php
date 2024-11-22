@@ -37,12 +37,12 @@
       <!-- header section -->
       <?php
       require "../php/header.php";
-      createHeader('book', 'Purchase Report', 'Showing Purchase Report');
+      createHeaderDash('book', 'Purchase Report', 'Showing Purchase Report');
       ?>
       <!-- header section end -->
 
       <!-- form content -->
-      <div class="row">
+      <div class="row p-3">
 
         <div class="col-md-12 form-group form-inline">
           <label class="font-weight-bold" for="">Start Date :&emsp;</label>

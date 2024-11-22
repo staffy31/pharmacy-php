@@ -130,8 +130,7 @@ function showPurchases($start_date, $end_date)
       </tfoot>
     <?php
   }
-  // }
-
+  
   function showSalesRow($seq_no, $row)
   {
     ?>
